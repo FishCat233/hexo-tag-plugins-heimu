@@ -13,13 +13,39 @@ hexo.extend.injector.register(
 hexo.extend.tag.register(
     "heimu",
     function (args) {
-        // {% heimu content [, title] %}
-        content = args[0];
-        if (args.length > 1) {
-            title = args[1];
-        } else {
-            title = "你知道的太多了";
+        // {% heimu content [title] [style] %}
+        let {content, title, style} = {content: "默认内容", title: "你知道的太多了", style: ""};
+        switch (args.length) {
+            case 1:
+                content = args[0];
+                break;
+            case 2:
+                [content, title] = args;
+                break;
+            case 3:
+                [content, title, style] = args;
+                break;
         }
-        return `<span class=heimu title=${title}>${content}</span>`;
+        return `<span class=heimu style="${style}" title=${title}>${content}</span>`;
+    },
+)
+
+hexo.extend.tag.register(
+    "heimux",
+    function (args) {
+        // {% heimu content [title] [style] %}
+        let {content, title, style} = {content: "默认内容", title: "你知道的太多了", style: "" };
+        switch (args.length) {
+            case 1:
+                content = args[0];
+                break;
+            case 2:
+                [content, title] = args;
+                break;
+            case 3:
+                [content, title, style] = args;
+                break;
+        }
+        return `<span class="heimu heimu_delete_line" style="${style}" title=${title}>${content}</span>`;
     },
 )

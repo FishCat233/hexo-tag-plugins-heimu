@@ -22,3 +22,7 @@ body:not(.heimu_toggle_on) .heimu.off .new,body:not(.heimu_toggle_on) .heimu.off
     transition: color .13s linear;
     color: #ba0000
 }
+
+.heimu_delete_line {
+    text-decoration: line-through;
+}
