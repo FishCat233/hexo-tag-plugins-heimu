@@ -1,7 +1,7 @@
 const css = hexo.extend.helper.get("css").bind(hexo);
 
 // css cdn
-const style_css = "https://cdn.jsdelivr.net/npm/heimu-js@1.0.0/style.css";
+const style_css = "https://cdn.jsdelivr.net/npm/hexo-tag-plugins-heimu@latest/style.css";
 
 // 注入 css
 hexo.extend.injector.register(
